@@ -8,6 +8,9 @@ const login = require('./routes/login')
 const item = require('./routes/item')
 const poster = require('./routes/poster')
 const category = require('./routes/category')
+const wishlist = require('./routes/wishlist')
+const order = require('./routes/order')
+const cart = require('./routes/cart')
 
 const app = express()
 
@@ -24,6 +27,10 @@ app.use('/login' , login)
 app.use('/item' , item)
 app.use('/poster' , poster)
 app.use('/category' , category)
+app.use('/wishlist' , wishlist)
+app.use('/order' , order)
+app.use('/cart' , cart)
+
 
 
 app.listen(8080 || process.env.PORT , () => console.log('server is listening at port 8080'))

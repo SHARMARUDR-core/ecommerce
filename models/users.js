@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         state: String,
         zip: String,
         country: String,
-    }
+    } 
 } , { timestamps : true });
 
 // Create and export the User model

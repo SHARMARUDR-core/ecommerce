@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const orderSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    user: { type: mongoose.Schema.Types.ObjectId , ref: 'user', required: true },
     items: [
         {
             items: { 
@@ -23,10 +23,18 @@ const orderSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    status: { 
+    status: {
         type: String,
-        default: 'Pending'
+        enum: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
+        default: 'Pending',
+    },
+    paymentMethod: {
+        type: String,
+        enum: ['Credit Card', 'Debit Card', 'UPI', 'Cash on Delivery'],
+        required: true,
     }
 } , { timestamps : true });
 
-module.exports = mongoose.model('Orders', orderSchema);
+const Orders = mongoose.model('Orders', orderSchema);
+
+module.exports = Orders

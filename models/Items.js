@@ -35,7 +35,7 @@ const ItemSchema = new mongoose.Schema({
     category : {
         type : String , 
         required : true
-    }
+    } 
 } ,  { timestamps : true });
 
 const Items =  mongoose.model('Items' , ItemSchema);

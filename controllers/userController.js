@@ -10,7 +10,7 @@ exports.createUser = async (req, res) => {
             password : password
         })
         console.log(newUser)
-        res.status(201).json('Your respones is added')
+        res.status(201).json(newUser)
     }catch{
         res.status(500)
     } 
